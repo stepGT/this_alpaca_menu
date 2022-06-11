@@ -16,15 +16,17 @@ import { reset } from './gulp/tasks/reset.js';
 import { html } from './gulp/tasks/html.js';
 import { server } from './gulp/tasks/server.js';
 import { images } from './gulp/tasks/images.js';
+import { scss } from './gulp/tasks/scss.js';
 
 // Watcher change files and html
 function watcher() {
   gulp.watch(path.watch.files, copy);
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.images, images);
+  gulp.watch(path.watch.scss, scss);
 };
 
-const mainTasks = gulp.parallel(copy, html, images);
+const mainTasks = gulp.parallel(copy, html, images, scss);
 
 export const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 export const build = gulp.series(reset, mainTasks);
