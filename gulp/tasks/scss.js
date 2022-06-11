@@ -1,6 +1,7 @@
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import rename from 'gulp-rename';
+import cleanCss from 'gulp-clean-css';
 
 const sass = gulpSass(dartSass);
 
@@ -21,6 +22,8 @@ export const scss = () => {
         outputStyle: 'expanded',
       }),
     )
+    .pipe(app.gulp.dest(app.path.build.css))
+    .pipe(cleanCss())
     .pipe(
       rename({
         extname: '.min.css',
