@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/stepGT/this_alpaca_menu#readme",
   "devDependencies": {
+    "browser-sync": "^2.27.10",
     "gulp": "^4.0.2",
     "gulp-file-include": "^2.3.0",
     "gulp-notify": "^4.0.0",

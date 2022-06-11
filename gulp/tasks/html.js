@@ -27,5 +27,6 @@ export const html = () => {
         },
       }),
     )
-    .pipe(app.gulp.dest(app.path.build.html));
+    .pipe(app.gulp.dest(app.path.build.html))
+    .pipe(app.plugins.browserSync.stream())
 };
